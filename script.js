@@ -1046,7 +1046,7 @@ function generatePortfolioHTML(data, template) {
     /* Skills */
     .skills-grid { display:flex;flex-wrap:wrap;gap:0.6rem; }
     .skill-pill {
-      background:var(--card-bg);border:1px solid var(--border);
+      background:var(--card-bg);
       color:var(--accent);padding:0.4rem 1rem;border-radius:50px;
       font-size:0.85rem;font-weight:600;
       transition:all 0.3s;cursor:default;
@@ -1063,7 +1063,7 @@ function generatePortfolioHTML(data, template) {
     .timeline-content { flex:1; }
     .timeline-header { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.3rem; }
     .timeline-header strong { font-size:1rem;color:var(--text); }
-    .timeline-period { font-size:0.8rem;opacity:0.6;background:var(--card-bg);border:1px solid var(--border);padding:0.2rem 0.6rem;border-radius:20px; }
+    .timeline-period { font-size:0.8rem;opacity:0.6;background:var(--card-bg);padding:0.2rem 0.6rem;border-radius:20px; }
     .timeline-role { font-size:0.9rem;color:var(--accent);font-weight:600;margin-bottom:0.3rem; }
     .timeline-desc { font-size:0.85rem;opacity:0.7;line-height:1.6; }
     /* Projects */

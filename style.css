@@ -1665,15 +1665,13 @@ section { position: relative; z-index: 10; }
   .moons-container .string-wrap:nth-child(2) { display: none; }
 
   /* Modal full-screen on mobile */
-  .modal-overlay { align-items: flex-start; padding: 0; }
+  .modal-overlay { padding: 0.5rem; }
   .modal {
     padding: 1.2rem;
     max-width: 100%;
     width: 100%;
-    min-height: 100dvh;
-    border-radius: 0;
+    border-radius: var(--radius-md);
     margin: 0;
-    overflow-y: auto;
   }
   .modal-title { font-size: 1.2rem; }
   .modal-sub { font-size: 0.82rem; }
