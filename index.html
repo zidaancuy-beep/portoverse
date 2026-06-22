@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PortfolioVerse — Build Your Dream Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style type="text/css">@font-face {font-family:Orbitron;font-style:normal;font-weight:400;src:url(/cf-fonts/v/orbitron/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Orbitron;font-style:normal;font-weight:700;src:url(/cf-fonts/v/orbitron/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Orbitron;font-style:normal;font-weight:900;src:url(/cf-fonts/v/orbitron/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Rajdhani;font-style:normal;font-weight:300;src:url(/cf-fonts/s/rajdhani/5.2.7/latin/300/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Rajdhani;font-style:normal;font-weight:300;src:url(/cf-fonts/s/rajdhani/5.2.7/devanagari/300/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09;font-display:swap;}@font-face {font-family:Rajdhani;font-style:normal;font-weight:300;src:url(/cf-fonts/s/rajdhani/5.2.7/latin-ext/300/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Rajdhani;font-style:normal;font-weight:400;src:url(/cf-fonts/s/rajdhani/5.2.7/devanagari/400/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09;font-display:swap;}@font-face {font-family:Rajdhani;font-style:normal;font-weight:400;src:url(/cf-fonts/s/rajdhani/5.2.7/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Rajdhani;font-style:normal;font-weight:400;src:url(/cf-fonts/s/rajdhani/5.2.7/latin-ext/400/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Rajdhani;font-style:normal;font-weight:600;src:url(/cf-fonts/s/rajdhani/5.2.7/latin-ext/600/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Rajdhani;font-style:normal;font-weight:600;src:url(/cf-fonts/s/rajdhani/5.2.7/devanagari/600/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09;font-display:swap;}@font-face {font-family:Rajdhani;font-style:normal;font-weight:600;src:url(/cf-fonts/s/rajdhani/5.2.7/latin/600/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Rajdhani;font-style:normal;font-weight:700;src:url(/cf-fonts/s/rajdhani/5.2.7/devanagari/700/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09;font-display:swap;}@font-face {font-family:Rajdhani;font-style:normal;font-weight:700;src:url(/cf-fonts/s/rajdhani/5.2.7/latin-ext/700/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Rajdhani;font-style:normal;font-weight:700;src:url(/cf-fonts/s/rajdhani/5.2.7/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url(/cf-fonts/v/inter/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url(/cf-fonts/v/inter/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url(/cf-fonts/v/inter/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.2.8/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.2.8/greek-ext/wght/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.2.8/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.2.8/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.2.8/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.2.8/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url(/cf-fonts/v/inter/5.2.8/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}</style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     STAR FIELD BACKGROUND
+═══════════════════════════════════════════ -->
+<div class="starfield" id="starfield"></div>
+<div class="nebula-overlay"></div>
+
+<!-- ═══════════════════════════════════════════
+     HANGING CRESCENT MOONS
+═══════════════════════════════════════════ -->
+<div class="moons-container">
+  <div class="string-wrap" style="left:12%">
+    <div class="string"></div>
+    <div class="moon moon-1">🌙</div>
+  </div>
+  <div class="string-wrap" style="left:50%; transform:translateX(-50%)">
+    <div class="string"></div>
+    <div class="moon moon-2">🌙</div>
+  </div>
+  <div class="string-wrap" style="right:12%">
+    <div class="string"></div>
+    <div class="moon moon-3">🌙</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-brand">
+    <span class="brand-icon">🌌</span>
+    <span class="brand-text">Portfolio<span class="brand-accent">Verse</span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#hero" class="nav-link">Home</a></li>
+    <li><a href="#features" class="nav-link">Features</a></li>
+    <li><a href="#templates" class="nav-link">Templates</a></li>
+    <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+    <li><a href="#pricing" class="nav-link">Pricing</a></li>
+  </ul>
+  <button class="nav-cta" id="navCta" onclick="scrollToTemplates()">Get Started Free</button>
+  <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" title="Switch Language">🌐 EN</button>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">✨ 100+ Stunning Templates</div>
+    <h1 class="hero-title">
+      Build Your <span class="gradient-text">Dream Portfolio</span><br/>
+      In Minutes
+    </h1>
+    <p class="hero-subtitle">
+      Choose from 100 breathtaking templates. Fill in your details.<br/>
+      Get an instant shareable link to your professional portfolio.
+    </p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="scrollToTemplates()">
+        <i class="fas fa-rocket"></i> Explore Templates
+      </button>
+      <button class="btn-secondary" onclick="openDemo()">
+        <i class="fas fa-play-circle"></i> Watch Demo
+      </button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">100+</span><span class="stat-label">Templates</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">50K+</span><span class="stat-label">Portfolios Made</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Rating</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="floating-card card-1">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <div class="mini-portfolio dark">
+            <div class="mini-avatar">👤</div>
+            <div class="mini-name">Alex Rivera</div>
+            <div class="mini-role">Full Stack Dev</div>
+          </div>
+        </div>
+        <div class="card-face card-back">
+          <div class="mini-portfolio neon">
+            <div class="mini-avatar">👤</div>
+            <div class="mini-name">Alex Rivera</div>
+            <div class="mini-role">Full Stack Dev</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="floating-card card-2">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <div class="mini-portfolio ocean">
+            <div class="mini-avatar">👤</div>
+            <div class="mini-name">Sari Dewi</div>
+            <div class="mini-role">UI/UX Designer</div>
+          </div>
+        </div>
+        <div class="card-face card-back">
+          <div class="mini-portfolio vintage">
+            <div class="mini-avatar">👤</div>
+            <div class="mini-name">Sari Dewi</div>
+            <div class="mini-role">UI/UX Designer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="floating-card card-3">
+      <div class="card-inner">
+        <div class="card-face card-front">
+          <div class="mini-portfolio nature">
+            <div class="mini-avatar">👤</div>
+            <div class="mini-name">James K.</div>
+            <div class="mini-role">Creative Director</div>
+          </div>
+        </div>
+        <div class="card-face card-back">
+          <div class="mini-portfolio scifi">
+            <div class="mini-avatar">👤</div>
+            <div class="mini-name">James K.</div>
+            <div class="mini-role">Creative Director</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FEATURES SECTION
+═══════════════════════════════════════════ -->
+<section class="features" id="features">
+  <div class="section-header">
+    <div class="section-tag">Why PortfolioVerse?</div>
+    <h2 class="section-title">Everything You Need to <span class="gradient-text">Shine Online</span></h2>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div class="feature-icon">🎨</div>
+          <h3>100 Unique Templates</h3>
+          <p>From galaxy to vintage, every style covered</p>
+        </div>
+        <div class="flip-back">
+          <h3>100 Unique Templates</h3>
+          <p>Dark cosmic, neon tech, ocean marine, retro vintage, artistic creative — no two look alike. Every template is handcrafted.</p>
+        </div>
+      </div>
+    </div>
+    <div class="feature-card flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant Portfolio Link</h3>
+          <p>Fill in your info, click save, get your link</p>
+        </div>
+        <div class="flip-back">
+          <h3>Instant Portfolio Link</h3>
+          <p>No coding needed. Your portfolio is live in under 2 minutes. Share it on LinkedIn, your CV, or anywhere you want.</p>
+        </div>
+      </div>
+    </div>
+    <div class="feature-card flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div class="feature-icon">📱</div>
+          <h3>Mobile Responsive</h3>
+          <p>Looks great on every device, every screen</p>
+        </div>
+        <div class="flip-back">
+          <h3>Mobile Responsive</h3>
+          <p>All 100 templates are fully responsive. Hiring managers on their phones will love your portfolio just as much.</p>
+        </div>
+      </div>
+    </div>
+    <div class="feature-card flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div class="feature-icon">🔗</div>
+          <h3>Social Integration</h3>
+          <p>WhatsApp, Instagram, LinkedIn, GitHub — one click</p>
+        </div>
+        <div class="flip-back">
+          <h3>Social Integration</h3>
+          <p>Add your social links once. Visitors tap WA → opens WhatsApp. Tap IG → opens Instagram. Fully connected.</p>
+        </div>
+      </div>
+    </div>
+    <div class="feature-card flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div class="feature-icon">🌟</div>
+          <h3>Animated & Interactive</h3>
+          <p>3D flips, parallax, particles — never boring</p>
+        </div>
+        <div class="flip-back">
+          <h3>Animated & Interactive</h3>
+          <p>Every template comes loaded with smooth animations that make recruiters stop scrolling and pay attention to YOU.</p>
+        </div>
+      </div>
+    </div>
+    <div class="feature-card flip-card">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div class="feature-icon">🆓</div>
+          <h3>Free to Start</h3>
+          <p>Create your first portfolio completely free</p>
+        </div>
+        <div class="flip-back">
+          <h3>Free to Start</h3>
+          <p>No credit card. No hidden fees. Create your portfolio now, upgrade only when you need more templates or custom domains.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TEMPLATES CATALOG SECTION
+═══════════════════════════════════════════ -->
+<section class="templates-section" id="templates">
+  <div class="section-header">
+    <div class="section-tag">Template Catalog</div>
+    <h2 class="section-title">Pick Your <span class="gradient-text">Perfect Style</span></h2>
+    <p class="section-sub">100 templates across 10 categories. Use ← → arrows to browse.</p>
+  </div>
+
+  <!-- Category Tabs -->
+  <div class="category-tabs" id="categoryTabs">
+    <button class="cat-tab active" data-cat="all" onclick="filterCategory('all', this)">✨ All</button>
+    <button class="cat-tab" data-cat="cosmic" onclick="filterCategory('cosmic', this)">🌌 Cosmic</button>
+    <button class="cat-tab" data-cat="nature" onclick="filterCategory('nature', this)">🌿 Nature</button>
+    <button class="cat-tab" data-cat="tech" onclick="filterCategory('tech', this)">⚡ Tech/Neon</button>
+    <button class="cat-tab" data-cat="minimal" onclick="filterCategory('minimal', this)">🎯 Minimal</button>
+    <button class="cat-tab" data-cat="vintage" onclick="filterCategory('vintage', this)">📷 Vintage</button>
+    <button class="cat-tab" data-cat="artistic" onclick="filterCategory('artistic', this)">🎨 Artistic</button>
+    <button class="cat-tab" data-cat="corporate" onclick="filterCategory('corporate', this)">💼 Corporate</button>
+    <button class="cat-tab" data-cat="playful" onclick="filterCategory('playful', this)">🎉 Playful</button>
+    <button class="cat-tab" data-cat="ocean" onclick="filterCategory('ocean', this)">🌊 Ocean</button>
+    <button class="cat-tab" data-cat="scifi" onclick="filterCategory('scifi', this)">🚀 Sci-Fi</button>
+  </div>
+
+  <!-- Slider Container -->
+  <div class="slider-wrapper">
+    <button class="slider-arrow arrow-left" id="arrowLeft" onclick="slideLeft()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="templates-track-outer">
+      <div class="templates-track" id="templatesTrack">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+    <button class="slider-arrow arrow-right" id="arrowRight" onclick="slideRight()">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <div class="slider-dots" id="sliderDots"></div>
+  <div class="slider-counter" id="sliderCounter">1 – 5 of 100</div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════════ -->
+<section class="how-it-works" id="how-it-works">
+  <div class="section-header">
+    <div class="section-tag">Simple Process</div>
+    <h2 class="section-title">Ready in <span class="gradient-text">3 Easy Steps</span></h2>
+  </div>
+  <div class="steps-container">
+    <div class="step-card">
+      <div class="step-number">01</div>
+      <div class="step-icon">🎨</div>
+      <h3>Choose a Template</h3>
+      <p>Browse 100 stunning templates. Pick the one that matches your vibe — from neon tech to galaxy cosmic.</p>
+    </div>
+    <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+    <div class="step-card">
+      <div class="step-number">02</div>
+      <div class="step-icon">✍️</div>
+      <h3>Fill Your Details</h3>
+      <p>Add your name, role, experience, skills, photo, and social links. Takes less than 5 minutes.</p>
+    </div>
+    <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+    <div class="step-card">
+      <div class="step-number">03</div>
+      <div class="step-icon">🚀</div>
+      <h3>Share Your Link</h3>
+      <p>Hit save and instantly get a shareable portfolio link. Send it to recruiters, add to your CV, done!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PRICING
+═══════════════════════════════════════════ -->
+<section class="pricing" id="pricing">
+  <div class="section-header">
+    <div class="section-tag">Pricing</div>
+    <h2 class="section-title">Simple & <span class="gradient-text">Transparent</span> Pricing</h2>
+  </div>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-badge">Free</div>
+      <div class="price">Rp 0<span>/forever</span></div>
+      <ul class="pricing-features">
+        <li><i class="fas fa-check"></i> 10 Templates Access</li>
+        <li><i class="fas fa-check"></i> 1 Portfolio Link</li>
+        <li><i class="fas fa-check"></i> All Social Links</li>
+        <li><i class="fas fa-check"></i> Mobile Responsive</li>
+        <li class="disabled"><i class="fas fa-times"></i> Custom Domain</li>
+        <li class="disabled"><i class="fas fa-times"></i> Analytics</li>
+      </ul>
+      <button class="btn-pricing" onclick="scrollToTemplates()">Start Free</button>
+    </div>
+    <div class="pricing-card featured">
+      <div class="pricing-badge popular">⭐ Popular</div>
+      <div class="price">Rp 49K<span>/month</span></div>
+      <ul class="pricing-features">
+        <li><i class="fas fa-check"></i> All 100 Templates</li>
+        <li><i class="fas fa-check"></i> Unlimited Portfolios</li>
+        <li><i class="fas fa-check"></i> All Social Links</li>
+        <li><i class="fas fa-check"></i> Mobile Responsive</li>
+        <li><i class="fas fa-check"></i> Custom Domain</li>
+        <li><i class="fas fa-check"></i> Analytics Dashboard</li>
+      </ul>
+      <button class="btn-pricing primary" onclick="scrollToTemplates()">Get Pro</button>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-badge">Teams</div>
+      <div class="price">Rp 149K<span>/month</span></div>
+      <ul class="pricing-features">
+        <li><i class="fas fa-check"></i> Everything in Pro</li>
+        <li><i class="fas fa-check"></i> Up to 10 Team Members</li>
+        <li><i class="fas fa-check"></i> Brand Kit</li>
+        <li><i class="fas fa-check"></i> Priority Support</li>
+        <li><i class="fas fa-check"></i> White Label</li>
+        <li><i class="fas fa-check"></i> API Access</li>
+      </ul>
+      <button class="btn-pricing" onclick="scrollToTemplates()">Get Teams</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <span class="brand-icon">🌌</span>
+      <span class="brand-text">Portfolio<span class="brand-accent">Verse</span></span>
+      <p>Build your professional portfolio in minutes. Stand out from the crowd with stunning templates.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Templates</h4>
+      <a href="#" onclick="filterCategory('cosmic',null)">Cosmic</a>
+      <a href="#" onclick="filterCategory('tech',null)">Tech/Neon</a>
+      <a href="#" onclick="filterCategory('nature',null)">Nature</a>
+      <a href="#" onclick="filterCategory('minimal',null)">Minimal</a>
+      <a href="#" onclick="filterCategory('vintage',null)">Vintage</a>
+    </div>
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Blog</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div class="footer-links">
+      <h4>Follow Us</h4>
+      <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="#"><i class="fab fa-github"></i> GitHub</a>
+      <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 PortfolioVerse. Made with 💜 for creative professionals.</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     TEMPLATE SELECTION MODAL
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <div class="modal-header">
+      <div class="modal-template-badge" id="modalBadge">🌌 Cosmic Dark</div>
+      <h2 class="modal-title">Fill Your Portfolio Details</h2>
+      <p class="modal-sub">Only fill what you want — empty fields will be hidden automatically.</p>
+    </div>
+
+    <form class="portfolio-form" id="portfolioForm" onsubmit="generatePortfolio(event)">
+
+      <!-- Photo Upload -->
+      <div class="form-section">
+        <h3 class="form-section-title"><i class="fas fa-user-circle"></i> Profile Photo</h3>
+        <div class="photo-upload-area" id="photoUploadArea" onclick="document.getElementById('photoInput').click()">
+          <div class="photo-preview" id="photoPreview">
+            <i class="fas fa-camera"></i>
+            <span>Click to upload your photo</span>
+          </div>
+          <input type="file" id="photoInput" accept="image/*" hidden onchange="previewPhoto(event)"/>
+        </div>
+      </div>
+
+      <!-- Personal Info -->
+      <div class="form-section">
+        <h3 class="form-section-title"><i class="fas fa-id-card"></i> Personal Information</h3>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>Full Name <span class="required">*</span></label>
+            <input type="text" id="inputName" placeholder="e.g. Alexandra Rivera" required/>
+          </div>
+          <div class="form-group">
+            <label>Job Title / Role <span class="required">*</span></label>
+            <input type="text" id="inputRole" placeholder="e.g. UI/UX Designer" required/>
+          </div>
+          <div class="form-group">
+            <label>Location</label>
+            <input type="text" id="inputLocation" placeholder="e.g. Jakarta, Indonesia"/>
+          </div>
+          <div class="form-group full">
+            <label>About Me <span class="required">*</span></label>
+            <textarea id="inputAbout" rows="4" placeholder="Tell the world about yourself — your passion, what drives you, what makes you unique..." required></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="form-section">
+        <h3 class="form-section-title"><i class="fas fa-briefcase"></i> Experience</h3>
+        <div id="experienceList">
+          <div class="experience-item" id="exp-0">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Company / Organization</label>
+                <input type="text" class="exp-company" placeholder="e.g. Google"/>
+              </div>
+              <div class="form-group">
+                <label>Position</label>
+                <input type="text" class="exp-position" placeholder="e.g. Senior Designer"/>
+              </div>
+              <div class="form-group">
+                <label>Period</label>
+                <input type="text" class="exp-period" placeholder="e.g. 2022 – Present"/>
+              </div>
+              <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="exp-desc" placeholder="Brief description of your role"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn-add-item" onclick="addExperience()">
+          <i class="fas fa-plus"></i> Add Another Experience
+        </button>
+      </div>
+
+      <!-- Education -->
+      <div class="form-section">
+        <h3 class="form-section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+        <div id="educationList">
+          <div class="education-item" id="edu-0">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Institution</label>
+                <input type="text" class="edu-institution" placeholder="e.g. Universitas Indonesia"/>
+              </div>
+              <div class="form-group">
+                <label>Degree / Major</label>
+                <input type="text" class="edu-degree" placeholder="e.g. S1 Informatika"/>
+              </div>
+              <div class="form-group">
+                <label>Year</label>
+                <input type="text" class="edu-year" placeholder="e.g. 2018 – 2022"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn-add-item" onclick="addEducation()">
+          <i class="fas fa-plus"></i> Add Another Education
+        </button>
+      </div>
+
+      <!-- Skills -->
+      <div class="form-section">
+        <h3 class="form-section-title"><i class="fas fa-star"></i> Skills</h3>
+        <div class="form-group">
+          <label>Skills (comma separated)</label>
+          <input type="text" id="inputSkills" placeholder="e.g. Figma, React, Python, Photoshop, Leadership"/>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="form-section">
+        <h3 class="form-section-title"><i class="fas fa-code"></i> Projects / Portfolio Work</h3>
+        <div id="projectList">
+          <div class="project-item" id="proj-0">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Project Name</label>
+                <input type="text" class="proj-name" placeholder="e.g. E-Commerce App"/>
+              </div>
+              <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="proj-desc" placeholder="Brief project description"/>
+              </div>
+              <div class="form-group">
+                <label>Tech Stack / Tools</label>
+                <input type="text" class="proj-tech" placeholder="e.g. React, Node.js, MongoDB"/>
+              </div>
+              <div class="form-group">
+                <label>Project Link (optional)</label>
+                <input type="text" class="proj-link" placeholder="https://..."/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn-add-item" onclick="addProject()">
+          <i class="fas fa-plus"></i> Add Another Project
+        </button>
+      </div>
+
+      <!-- Social Links -->
+      <div class="form-section">
+        <h3 class="form-section-title"><i class="fas fa-share-alt"></i> Social & Contact Links</h3>
+        <p class="form-hint">Only fill what you have — empty ones won't appear on your portfolio.</p>
+        <div class="form-grid">
+          <div class="form-group social-input">
+            <label><i class="fab fa-whatsapp"></i> WhatsApp Number</label>
+            <input type="text" id="inputWA" placeholder="e.g. 6281234567890 (with country code)"/>
+          </div>
+          <div class="form-group social-input">
+            <label><i class="fab fa-instagram"></i> Instagram Username</label>
+            <input type="text" id="inputIG" placeholder="e.g. yourhandle (no @)"/>
+          </div>
+          <div class="form-group social-input">
+            <label><i class="fab fa-linkedin"></i> LinkedIn Profile URL</label>
+            <input type="text" id="inputLinkedIn" placeholder="e.g. linkedin.com/in/yourname"/>
+          </div>
+          <div class="form-group social-input">
+            <label><i class="fab fa-github"></i> GitHub Username</label>
+            <input type="text" id="inputGitHub" placeholder="e.g. yourusername"/>
+          </div>
+          <div class="form-group social-input">
+            <label><i class="fas fa-envelope"></i> Email Address</label>
+            <input type="email" id="inputEmail" placeholder="e.g. you@email.com"/>
+          </div>
+          <div class="form-group social-input">
+            <label><i class="fas fa-globe"></i> Personal Website</label>
+            <input type="text" id="inputWebsite" placeholder="e.g. https://yoursite.com"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-submit-area">
+        <div class="template-preview-badge">
+          Template: <strong id="selectedTemplateName">—</strong>
+        </div>
+        <button type="submit" class="btn-generate">
+          <i class="fas fa-magic"></i> Generate My Portfolio &amp; Get Link
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SUCCESS MODAL (LINK GENERATED)
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="successOverlay" onclick="closeSuccessOutside(event)" style="display:none">
+  <div class="success-modal" id="successModal">
+    <div class="success-animation">🎉</div>
+    <h2>Your Portfolio is Live!</h2>
+    <p>Share this link with the world:</p>
+    <div class="link-box">
+      <input type="text" id="portfolioLink" readonly onclick="this.select()"/>
+      <button class="btn-copy" onclick="copyLink()"><i class="fas fa-copy"></i> Copy</button>
+    </div>
+    <div class="success-actions">
+      <button class="btn-primary" onclick="openPortfolio()">
+        <i class="fas fa-external-link-alt"></i> Open Portfolio
+      </button>
+      <button class="btn-secondary" onclick="closeSuccess()">
+        <i class="fas fa-arrow-left"></i> Back to Templates
+      </button>
+    </div>
+    <p class="success-note">💡 Bookmark this link — it's your permanent portfolio URL!</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     DEMO MODAL
+═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="demoOverlay" onclick="closeDemoOutside(event)" style="display:none">
+  <div class="demo-modal">
+    <button class="modal-close" onclick="closeDemo()"><i class="fas fa-times"></i></button>
+    <h2>🎬 How PortfolioVerse Works</h2>
+    <div class="demo-steps">
+      <div class="demo-step"><span>1</span> Browse 100 templates using ← → arrows</div>
+      <div class="demo-step"><span>2</span> Click "Use This Template" on your favorite</div>
+      <div class="demo-step"><span>3</span> Fill in your name, role, experience, skills & social links</div>
+      <div class="demo-step"><span>4</span> Click "Generate My Portfolio"</div>
+      <div class="demo-step"><span>5</span> Get your instant shareable link! 🚀</div>
+    </div>
+    <button class="btn-primary" onclick="closeDemo(); scrollToTemplates()">
+      <i class="fas fa-rocket"></i> Start Now — It's Free!
+    </button>
+  </div>
+</div>
+
+<script src="templates.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
